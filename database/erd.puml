@@ -5,6 +5,7 @@ object user {
 <#white>| varchar | name | | NOT NULL |
 <#white>| varchar | email |  | NOT NULL |
 <#white>| varchar | password |  | NOT NULL |
+<#white>| varchar | role |  | NOT NULL |
 }
 
 object post {
@@ -25,9 +26,11 @@ object reply {
 <#white>| datetime | created_at |  | NOT NULL |
 <#white>| datetime | updated_at |  | NOT NULL |
 }
-post }|--|| reply
-user }|--|| reply
-user }|--|| post
+
+post }|--|| user
+reply }|--|| post
+reply }|--|| user
+
 
 
 @enduml
