@@ -1,0 +1,36 @@
+@startuml
+
+object user {
+<#white>| char(36) | user_id | PK | NOT NULL |
+<#white>| varchar | name | | NOT NULL |
+<#white>| varchar | email |  | NOT NULL |
+<#white>| varchar | password |  | NOT NULL |
+<#white>| varchar | role |  | NOT NULL |
+}
+
+object post {
+<#white>| char(36) | post_id | PK | NOT NULL |
+<#white>| char(36) | user_id | FK | NOT NULL |
+<#white>| varchar | title |  | NOT NULL |
+<#white>| text | comment |  | NOT NULL |
+<#white>| datetime | created_at |  | NOT NULL |
+<#white>| datetime | updated_at |  | NOT NULL |
+}
+
+object reply {
+<#white>| char(36) | reply_id | PK | NOT NULL |
+<#white>| char(36) | post_id | FK | NOT NULL |
+<#white>| char(36) | user_id | FK | NOT NULL |
+<#white>| varchar | title |  | NOT NULL |
+<#white>| text | comment |  | NOT NULL |
+<#white>| datetime | created_at |  | NOT NULL |
+<#white>| datetime | updated_at |  | NOT NULL |
+}
+
+post }|--|| user
+reply }|--|| post
+reply }|--|| user
+
+
+
+@enduml
