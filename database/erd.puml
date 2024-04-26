@@ -8,7 +8,7 @@ object user {
 }
 
 object post {
-<#white>| char(36) | post_id | PK | NOT NULL |
+<#white>| char(36) | post_id | PK | AUTO INCREMENT |
 <#white>| char(36) | user_id | FK | NOT NULL |
 <#white>| varchar | title |  | NOT NULL |
 <#white>| text | comment |  | NOT NULL |
@@ -17,7 +17,7 @@ object post {
 }
 
 object reply {
-<#white>| char(36) | reply_id | PK | NOT NULL |
+<#white>| char(36) | reply_id | PK | AUTO INCREMENT |
 <#white>| char(36) | post_id | FK | NOT NULL |
 <#white>| char(36) | user_id | FK | NOT NULL |
 <#white>| varchar | title |  | NOT NULL |
