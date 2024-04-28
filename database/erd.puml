@@ -3,27 +3,27 @@
 object user {
 <#white>| char(36) | user_id | PK | NOT NULL |
 <#white>| varchar | user_name | | NOT NULL |
-<#white>| varchar | password |  | NOT NULL |
+<#white>| varchar | password_hash |  | NOT NULL |
 <#white>| varchar | role |  | NOT NULL |
 }
 
 object post {
-<#white>| char(36) | post_id | PK | AUTO INCREMENT |
-<#white>| char(36) | user_id | FK | NOT NULL |
+<#white>| int | post_id | PK | AUTO INCREMENT |
+<#white>| int | user_id | FK | NOT NULL |
 <#white>| varchar | title |  | NOT NULL |
 <#white>| text | comment |  | NOT NULL |
-<#white>| datetime | created_at |  | NOT NULL |
-<#white>| datetime | updated_at |  | NOT NULL |
+<#white>| datetime | created |  | NOT NULL |
+<#white>| datetime | modified |  | NOT NULL |
 }
 
 object reply {
-<#white>| char(36) | reply_id | PK | AUTO INCREMENT |
-<#white>| char(36) | post_id | FK | NOT NULL |
-<#white>| char(36) | user_id | FK | NOT NULL |
+<#white>| int | reply_id | PK | AUTO INCREMENT |
+<#white>| int | post_id | FK | NOT NULL |
+<#white>| int | user_id | FK | NOT NULL |
 <#white>| varchar | title |  | NOT NULL |
 <#white>| text | comment |  | NOT NULL |
-<#white>| datetime | created_at |  | NOT NULL |
-<#white>| datetime | updated_at |  | NOT NULL |
+<#white>| datetime | created |  | NOT NULL |
+<#white>| datetime | modified |  | NOT NULL |
 }
 
 post }|--|| user
